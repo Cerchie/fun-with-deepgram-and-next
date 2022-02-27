@@ -1,34 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+I wrote this project to see what it would look like to make a call to Deepgram from a Next app. I chose Next because of the ease of making server-side calls from a Next project -- since this API requires a private key, I didn't want to make my calls from the client.
 
-## Getting Started
+To take a closer look at my project on your local machine, `git clone https://github.com/Cerchie/fun-with-deepgram-and-next && cd fun-with-deepgram-and-next && npm install && npm run dev`. (You'll need [npm](https://www.npmjs.com/) installed)
 
-First, run the development server:
+You can learn more about the inner workings by consulting the [Next](https://nextjs.org/docs) and [Deepgram](https://developers.deepgram.com/) documentation.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Right now the call is made to an audiofile hosted by Deepgram and simply renders the transcript to the home page. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Here are my goals for this project in the future:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Render the words in a more interesting way. 
+I'd like to make use of some sort of module to render the words based on something like frequency, perhaps. This would require a larger sample audio file. I also haven't made any changes to the out-of-the-box Next styles yet.  
+2. Render a streaming transcript. 
+This would affect the design choices of my first goal -- for example, if I chose a frequency chart module, I'd have to pick one that was dynamic. 
