@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 
 export async function getServerSideProps(context) {
     const apikey = process.env.DEEPGRAM_APIKEY
-    const res = await fetch(
+    const res_in_en = await fetch(
         'https://api.deepgram.com/v1/listen?language=en-US&model=general&punctuate=true',
         {
             method: 'POST',
@@ -19,20 +19,35 @@ export async function getServerSideProps(context) {
         }
     )
 
-    const data = await res.json()
+    const res_in_fr = await fetch(
+        'https://api.deepgram.com/v1/listen?language=fr&model=general&punctuate=true',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${apikey}`,
+            },
+            body: JSON.stringify({
+                url: 'https://www.lightbulblanguages.co.uk/resources/audio/quelageastu.mp3',
+            }),
+        }
+    )
 
-    if (!data) {
+    const en_data = await res_in_en.json()
+    const fr_data = await res_in_fr.json()
+
+    if (!en_data) {
         return {
             notFound: true,
         }
     }
-
+    console.log('FRENCH', fr_data)
     return {
-        props: { data }, // will be passed to the page component as props
+        props: { en_data, fr_data }, // will be passed to the page component as props
     }
 }
 export default function Home(props) {
-    console.log('PROPS', props.data.results.channels[0])
+    console.log('PROPS', props.en_data.results.channels[0])
     return (
         <div className={styles.container}>
             <Head>
@@ -45,8 +60,20 @@ export default function Home(props) {
             </Head>
 
             <main className={styles.main}>
-                <p className={styles.title}>
-                    {props.data.results.channels[0].alternatives[0].transcript}
+                <h1>DeepGram Samples</h1>
+                <h2>English Sample</h2>
+                <p>
+                    {
+                        props.en_data.results.channels[0].alternatives[0]
+                            .transcript
+                    }
+                </p>
+                <h2>French Sample</h2>
+                <p>
+                    {
+                        props.fr_data.results.channels[0].alternatives[0]
+                            .transcript
+                    }
                 </p>
             </main>
 
