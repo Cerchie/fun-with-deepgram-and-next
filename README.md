@@ -5,7 +5,7 @@ You'll also need to make a file in your root directory called `env.local` and pu
 
 You can learn more about the inner workings by consulting the [Next](https://nextjs.org/docs) and [Deepgram](https://developers.deepgram.com/) documentation.
 
-Right now the call is made to an audiofile hosted by Deepgram and simply renders the transcript to the home page. 
+Right now the calls are made to one English audiofile hosted by Deepgram, and one French audiofile [hosted elsewhere](https://www.lightbulblanguages.co.uk/resources-sound-files.htm#age), to experiment with multiple language support options offered by the `language` parameter.  Then the transcript is rendered to the home page. 
 
 Here are my goals for this project in the future:
 
