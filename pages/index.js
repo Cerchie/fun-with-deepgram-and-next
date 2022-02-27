@@ -45,9 +45,9 @@ export default function Home(props) {
             </Head>
 
             <main className={styles.main}>
-                <h1 className={styles.title}>
+                <p className={styles.title}>
                     {props.data.results.channels[0].alternatives[0].transcript}
-                </h1>
+                </p>
             </main>
 
             <footer className={styles.footer}>
