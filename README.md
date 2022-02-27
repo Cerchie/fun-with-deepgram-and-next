@@ -1,7 +1,7 @@
 I wrote this project to see what it would look like to make a call to Deepgram from a Next app. I chose Next because of the ease of making server-side calls from a Next project -- since this API requires a private key, I didn't want to make my calls from the client.
 
 To take a closer look at my project on your local machine, `git clone https://github.com/Cerchie/fun-with-deepgram-and-next && cd fun-with-deepgram-and-next && npm install && npm run dev`. (You'll need [npm](https://www.npmjs.com/) installed.)
-You'll also need a file in your root directory called `env.local` and put your Deepgram apikey in it like so: `DEEPGRAM_APIKEY=your_apikey_here`
+You'll also need to make a file in your root directory called `env.local` and put your Deepgram apikey in it like so: `DEEPGRAM_APIKEY=your_apikey_here`
 
 You can learn more about the inner workings by consulting the [Next](https://nextjs.org/docs) and [Deepgram](https://developers.deepgram.com/) documentation.
 
