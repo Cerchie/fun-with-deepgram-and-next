@@ -5,12 +5,14 @@ You'll also need to make a file in your root directory called `env.local` and pu
 
 You can learn more about the inner workings by consulting the [Next](https://nextjs.org/docs) and [Deepgram](https://developers.deepgram.com/) documentation.
 
-Right now the calls are made to one English audiofile hosted by Deepgram, and one French audiofile [hosted elsewhere](https://www.lightbulblanguages.co.uk/resources-sound-files.htm#age), to experiment with multiple language support options offered by the `language` parameter.  Then the transcript is rendered to the home page. 
+Right now the calls are made to one English audiofile hosted by Deepgram, and one French audiofile [hosted elsewhere](https://www.lightbulblanguages.co.uk/resources-sound-files.htm#age), to experiment with multiple language support options offered by the `language` parameter. Then the transcript is rendered to the home page.
 
 Here are my goals for this project in the future:
 
-1. Render the words in a more interesting way. 
-I'd like to make use of some sort of module to render the words based on something like frequency, perhaps. This would require a larger sample audio file. I also haven't made any changes to the out-of-the-box Next styles yet.  
-2. Render a streaming transcript [via websocket](https://developers.deepgram.com/api-reference/#transcription-streaming). 
-This would affect the design choices of my first goal -- for example, if I chose a frequency chart module, I'd have to pick one that was dynamic. 
+1. Render the words in a more interesting way.
+   I'd like to make use of some sort of module to render the words based on something like frequency, perhaps. This would require a larger sample audio file. I also haven't made any changes to the out-of-the-box Next styles yet.
+2. Render a streaming transcript [via websocket](https://developers.deepgram.com/api-reference/#transcription-streaming).
+   This would affect the design choices of my first goal -- for example, if I chose a frequency chart module, I'd have to pick one that was dynamic.
 3. Once I've rendered the streaming transcript, push the Deepgram API further by [utilizing parameters](https://developers.deepgram.com/api-reference/#transcription-prerecorded) like `search` or `callback`.
+
+Testing node workflow
