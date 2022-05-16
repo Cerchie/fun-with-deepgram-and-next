@@ -14,5 +14,3 @@ Here are my goals for this project in the future:
 2. Render a streaming transcript [via websocket](https://developers.deepgram.com/api-reference/#transcription-streaming).
    This would affect the design choices of my first goal -- for example, if I chose a frequency chart module, I'd have to pick one that was dynamic.
 3. Once I've rendered the streaming transcript, push the Deepgram API further by [utilizing parameters](https://developers.deepgram.com/api-reference/#transcription-prerecorded) like `search` or `callback`.
-
-Testing node workflow
